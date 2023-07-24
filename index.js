@@ -11,6 +11,11 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
   {
     type: "input",
+    message: "What is the name of your application?",
+    name: "appName",
+  },
+  {
+    type: "input",
     message: "What is your gitHub repo username?",
     name: "github",
   },
@@ -19,12 +24,6 @@ const questions = [
     type: "input",
     message: "What is your email address?",
     name: "email",
-  },
-
-  {
-    type: "input",
-    message: "What is the name of your application?",
-    name: "appName",
   },
 
   {
@@ -69,24 +68,31 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data);
-  return;
-  // create the readme
+  return new Promise((resolve, reject) => {
+    fs.writeFile(fileName, data, (err) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
 }
 
 // TODO: Create a function to initialize app
 function init() {
-  // ask the user questions - array
-  inquirer.prompt(questions).then((data) => {
-    // answers
-    console.log(data);
-  });
-  // const markdown = generateMarkdown(data);
-  writeToFile("README.md", markdown)
-    // create content from the answers
-    // call writeToFile
+  // ask the user questions
+  inquirer
+    .prompt(questions)
+    .then((data) => {
+      // answers
+      console.log(data);
+      const markdown = generateMarkdown(data);
+      console.log("README.md file created successully!");
+      return writeToFile("README.md", markdown);
+    })
     .catch((error) => {
-      console.log(error);
+      console.log("Error:", error);
     });
   // store answers as one {}
   // create a content for the readme (function) generate markdown
