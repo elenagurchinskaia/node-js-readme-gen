@@ -74,9 +74,6 @@ To run tests, use the following commands:
 ${data.commandTest}
 \`\`\`
 
-## License
-This project is licensed under the ${data.license} License
-
 
 ## Contributing
 ${data.repoUsage}

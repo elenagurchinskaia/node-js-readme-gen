@@ -89,7 +89,7 @@ function init() {
       console.log(data);
       const markdown = generateMarkdown(data);
       console.log("README.md file created successully!");
-      return writeToFile("README.md", markdown);
+      return writeToFile("./output/README.md", markdown);
     })
     .catch((error) => {
       console.log("Error:", error);
