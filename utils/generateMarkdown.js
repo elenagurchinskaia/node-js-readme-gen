@@ -16,27 +16,27 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   // generate the license badge and link
   const licenseBadge = renderLicenseBadge(data.license);
-  const licenseLink = renderLicenseBadge(data.license);
+  const licenseLink = renderLicenseLink(data.license);
   // create the README content using the user's input data
   return `
   #${data.appName}
   ${data.appDescription}
 
-  
+ 
 }
 
 // inject the stuff (can use markdown language)
 //
 module.exports = generateMarkdown;
 
-renderLicenseBadge();
+// renderLicenseBadge();

@@ -20,11 +20,57 @@ const questions = [
     message: "What is your email address?",
     name: "email",
   },
+
+  {
+    type: "input",
+    message: "What is the name of your application?",
+    name: "appName",
+  },
+
+  {
+    type: "input",
+    message: "Please write a short description of your project?",
+    name: "appDescription",
+  },
+
+  {
+    type: "list",
+    message: "What kind of license should your project have?",
+    name: "license",
+    choices: ["Apache 2.0", "MIT", "GPL 3.0", "BSD 3", "NONE"],
+  },
+
+  {
+    type: "input",
+    message: "What command should be run to install dependencies?",
+    name: "commandDep",
+    default: "npm i",
+  },
+
+  {
+    type: "input",
+    message: "What command should be run to run tests?",
+    name: "commandTest",
+    default: "npm test",
+  },
+
+  {
+    type: "input",
+    message: "What does the user need to know about using the repo?",
+    name: "repoInfo",
+  },
+
+  {
+    type: "input",
+    message: "What does the user need to know about conributing to the repo?",
+    name: "repoUsage",
+  },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data);
+  return;
   // create the readme
 }
 
@@ -35,7 +81,7 @@ function init() {
     // answers
     console.log(data);
   });
-  const markdown = generateMarkdown(data);
+  // const markdown = generateMarkdown(data);
   writeToFile("README.md", markdown)
     // create content from the answers
     // call writeToFile
@@ -53,6 +99,6 @@ function init() {
 // Function call to initialize app
 //
 init();
-writeToFile();
+// writeToFile();
 // console.log("Hello world");
 // var result = init();
