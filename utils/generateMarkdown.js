@@ -72,8 +72,9 @@ ${data.repoInfo}
 
 ## Tests
 To run tests, use the following commands:
+\`\`\`
 ${data.commandTest}
-
+\`\`\`
 
 ## Contributing
 ${data.repoUsage}
