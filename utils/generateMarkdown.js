@@ -49,6 +49,7 @@ function generateMarkdown(data) {
 
 ${renderLicenseSection(data.license)}
 
+## Description
 ${data.appDescription}
 
 ## Table of Contents
@@ -68,11 +69,10 @@ ${data.commandDep}
 ## Usage
 ${data.repoInfo}
 
-To run tests, use the following commands:
 
-\`\`\`
+## Tests
+To run tests, use the following commands:
 ${data.commandTest}
-\`\`\`
 
 
 ## Contributing
