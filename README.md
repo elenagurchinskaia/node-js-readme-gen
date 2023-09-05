@@ -22,6 +22,10 @@ To install the required dependencies, run the following command:
 npm i
 ```
 
+## Walkthrough Video
+
+[Walkthrough Video](https://drive.google.com/file/d/1tm3wYP_tuA3mWW_XLzrumLXqDXNMaknz/view)
+
 ## Usage
 
 Please, run node index.js to generate the README file.
